@@ -187,18 +187,7 @@ exports.PaytureEWallet = function PaytureEWallet(host, merchant){
 
             {
                 name: 'Data',
-                value: payture.toEncodeUrl({
-                    SessionType : data.SessionType,
-                    IP : data.IP,
-                    OrderId : data.OrderId,
-                    Amount : data.Amount,
-                    VWUserLgn : data.VWUserLgn,
-                    VWUserPsw : data.VWUserPsw,
-                    PhoneNumber : data.PhoneNumber,
-                    CardId : data.CardId,
-                    TemplateTag : data.TemplateTag,
-                    Language : data.Language
-                })
+                value: payture.toEncodeUrl(data)
             },
         ], callbackFunc, (data.SessionType == 'Add' ? 'Add' : 'Pay')); 
     };
